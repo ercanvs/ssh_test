@@ -1,0 +1,126 @@
+git log komutu oluşan butun commitler hakkında detaylı bılgılerı lıstelemek için kullanılır.
+
+$ git log
+commit 27687c1a3da8a95d3b4cd906f003f5650eb92490 (HEAD -> master, origin/master)
+Author: ercan <ercan5214@gmail.com>
+Date:   Mon Aug 10 00:44:09 2020 +0300
+
+    githup projesi
+27687c1a3da8a95d3b4cd906f003f5650eb92490   commit in hash degeri
+###########################################################
+git blame komutu dosya hakkında kı değişiklikleri içerigini  verir
+kullanımı git blame dosya_adi
+git branch komutu ile hangi branch de oldugumuzu gorebılırız.
+
+Aksi belirtilmedikçe her zaman master branch inde işlem yapılır.
+
+ git branch user.backend
+user.backend adında bır branch olusturdu.
+
+
+$ git branch
+* master
+  user.backend
+  burda yanında yıldız olan o branch de oldugumuz gosterır diger branch e geçmek ıcın ıse
+  $ git checkout user.backend
+  
+$ git checkout user.backend
+Switched to branch 'user.backend'
+
+
+$ git branch
+  master
+* user.backend
+git status  komutu ile degişiklikler oldugunu görebılıyoruz.
+
+$ git status
+On branch user.backend
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+git add .
+git commit -m "git komutlari eklendi"
+$ git checkout master
+master branch ine geçiyoruz.
+
+$ git merge master user.backend
+burda iki branch i birleştirme işlemi yaparız.
+daha sonrasında git log komutunu calısıtırp detaylarına bakabılırız.
+$ git branch -d user.backend
+branch silme işlemınde kullanılan komuttur.
+$ git branch -d user.backend
+Deleted branch user.backend (was 4e13d78).
+$ git branch -m user new_user   bu komut ıse user ısımlı branch ı new_user branch ısmıyle degıstırmemıze yarar
+ git push origin user_backend  bu komut ıle uzaktakı branch e kodumuzu yada dosyamızı gonderırız.
+ 
+$  git push origin master 
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 284 bytes | 284.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/ercanvs/deneme1.git
+   27687c1..4e13d78  master -> master
+   
+   
+   $ git status
+herhangı bır degısıklık var mı yok mu onu gosterıyor.
+$ git add test2.txt
+yenı ekledıgımız dosyayı gıt de boyle eklıyoruz.
+
+ $ git commit -m "belge eklendi"  
+ commit etme komutudur.
+ $ git branch new_branch  yenı branch ekleme komutudur.
+ 
+$ git commit -m "update belge"  yenı commit etmek ıcın 
+git diff master new_branch  iki branch arasında kı farklılıkları gormek ıcın  kullanılan komuttur
+
+diff --git a/test2.txt b/test2.txt 
+index 9daeafb..8b16b71 100644
+--- a/test2.txt
++++ b/test2.txt
+@@ -1 +1,9 @@
+ test
++test
++test
++test
++test
++test
++test
++test
++test
+
+git revert 80f2d2c9c6311efd4ba5bfdf7afab348fe530aee
+burda git revert hash hangı commıt e doneceksek onun hash ını alıyoruz bunu da git log dan bulabılırız.
+$ git reset  --hard c9a9022a0ec0d8c0b78181c62ed0e114bc07483d
+en son oluşan commit i siler
+
+$ git clone https://github.com/ercanvs/deneme1.git
+işlemı ıle belırtılen lınktekı projeyi local e  ındırebılırız.
+
+git show komutu olusturdugumuz nesneler hakkında bilgi verir.
+$ git show
+$ git pull degişikliği bılgısayarımıza çekmek ıcın kullanılır.
+git rm dosya_adi git'in içindekı dosyaları silmemıze yarar.
+
+git config komutu ayarlarımzı yapmamız gerekn komuttur kullancıı adı emaıl gıbı
+kullanımı 
+git config --global user.name
+git init komutu yapılandırma ayarlarını yaptıktan sonra kullanıması gereken komuttur.
+git add . yada *  yada /belge_adi
+git status  projede degısıklık var mı dıye kontrol etmemıze yarayan degısıklıgı gosteren komuttur.
+git commit yaptıgımız degısıklıklerın ne oldugunu belırtmek ıcın kullanılan komuttur.
+git log  olusturdugumuz commıtlerı lıstelemek ıcın kullandıgımız komuttur burda hash emaıl gıbı bılgılerı vardır.
+git push komtu ıle uzakdakı depoya gondermemıze yarayan komuttur.
+
+ git push origin user_backend  bu komut ıle uzaktakı branch e kodumuzu yada dosyamızı gonderırız.
+ 
+$  git push origin master 
+kullanımı bu sekıldedır.
+git pull uzak depodakı dosyayı local ımze cekmemızı saglar burda da logun username ve passowrd bılgıelrın sorar
+git rm  silinecek dosyayı burda belırtırız.

@@ -1,0 +1,12 @@
+
+
+git config --global user.name "ercan"
+git config --global user.email "ercan5214@gmail.com"
+cd / #dosyanın oldugu dizine gidilir.
+git init
+git add .
+git commit -m "githup projesi"
+
+git remote add origin https://github.com/ercanvs/deneme1.git
+git push -u origin master
+bundan sonra githup logın sayfası gelıyor logın bılgılerını yazıyoruz.
